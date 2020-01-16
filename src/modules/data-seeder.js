@@ -4,10 +4,7 @@
   import WeightDetails from '../classes/weight-details';
   import CardioDetails from '../classes/cardio-details';
   
-  /**
-   * Exercise Factory
-   */
-  const ExerciseFactory = (function() {
+  const DataSeeder = (function() {
     const createExercise = function(exerciseConstant) {
       if (exerciseConstant.category === CONSTANTS.Category.MISC) {
         return new Exercise({
@@ -65,4 +62,4 @@
     };
   })();
 
-  export default ExerciseFactory;
+  export default DataSeeder;
