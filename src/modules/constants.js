@@ -377,6 +377,7 @@ const CONSTANTS = (function() {
    */
   const Routine = {
     CARDIO_DAY: {
+      id: "routine_001",
       name: "Cardio Day",
       exercise_ids: [
         Exercise.ELLIPTICAL.id,
@@ -385,6 +386,7 @@ const CONSTANTS = (function() {
       ]
     },
     CHEST_1: {
+      id: "routine_002",
       name: "Chest, Shoulders, Triceps #1",
       exercise_ids: [
         Exercise.FLAT_TNG_PRESS.id,
@@ -396,6 +398,7 @@ const CONSTANTS = (function() {
       ]
     },
     CHEST_2: {
+      id: "routine_003",
       name: "Chest, Shoulders, Triceps #2",
       exercise_ids: [
         Exercise.FLAT_PIN_PRESS.id,
@@ -407,6 +410,7 @@ const CONSTANTS = (function() {
       ]
     },
     BACK_1: {
+      id: "routine_004",
       name: "Back and Biceps #1",
       exercise_ids: [
         Exercise.BENT_OVER_ROWS.id,
@@ -417,6 +421,7 @@ const CONSTANTS = (function() {
       ]
     },
     BACK_2: {
+      id: "routine_005",
       name: "Back and Biceps #2",
       exercise_ids: [
         Exercise.SEATED_CABLE_ROWS.id,
@@ -427,6 +432,7 @@ const CONSTANTS = (function() {
       ]
     },
     LEGS_CORE: {
+      id: "routine_006",
       name: "Legs and Core",
       exercise_ids: [
         Exercise.LEG_PRESS_MACHINE.id,

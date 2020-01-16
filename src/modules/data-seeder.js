@@ -35,6 +35,7 @@
 
     const createRoutine = function(routineConstant) {
       return new Routine({
+        id: routineConstant.id,
         name: routineConstant.name,
         exercise_ids: routineConstant.exercise_ids
       });

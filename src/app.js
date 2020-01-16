@@ -1,4 +1,6 @@
 import DataSeeder from './modules/data-seeder';
+import HomeFunctions from './modules/home-functions';
+import HelperFunctions from './modules/helper-functions';
 
 /**
  * Main App
@@ -9,4 +11,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
   console.log(exercises);
   console.log(routines);
+
+  HomeFunctions.constructHomePage(routines);
+  HelperFunctions.loadEventListeners(routines);
 });
