@@ -20,7 +20,9 @@ const HomeFunctions = (function() {
     let byline = "WIP Fitness Tracker ~ Michael J.";
     let html = `
         <h1 class="app-title">${title}</h1>
-        ${routinesDiv.innerHTML}
+        <div class="routine-btns">
+          ${routinesDiv.innerHTML}
+        </div>
         <p class="byline">${byline}</p>
     `;
   
