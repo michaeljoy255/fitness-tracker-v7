@@ -1,24 +1,24 @@
 const HomeFunctions = (function() {
-  const constructHomePage = function(routinesArr) {
-    let app = document.getElementById("app");
-    let docFragment = document.createDocumentFragment();
-    let homeSection = document.createElement("section");
-    let routinesDiv = document.createElement("div");
+  const constructHomePage = function(fitnessRoutines) {
+    const app = document.getElementById("app");
+    const docFragment = document.createDocumentFragment();
+    const homeSection = document.createElement("section");
+    const routinesDiv = document.createElement("div");
   
     homeSection.id = "home-page";
     routinesDiv.className = "routines-btns";
   
-    routinesArr.forEach(routine => {
-      let routineButton = document.createElement("button");
+    fitnessRoutines.forEach(routine => {
+      const routineButton = document.createElement("button");
       routineButton.id = routine.id;
       routineButton.textContent = routine.name;
       routineButton.className = "routine-btn";
       routinesDiv.appendChild(routineButton);
     });
 
-    let title = "Fitness Linear Progression";
-    let byline = "WIP Fitness Tracker ~ Michael J.";
-    let html = `
+    const title = "Fitness Linear Progression";
+    const byline = "WIP Fitness Tracker ~ Michael J.";
+    const html = `
         <h1 class="app-title">${title}</h1>
         <div class="routine-btns">
           ${routinesDiv.innerHTML}
@@ -31,9 +31,7 @@ const HomeFunctions = (function() {
     app.appendChild(docFragment);
   }
 
-  return {
-    constructHomePage
-  }
+  return { constructHomePage };
 })();
 
 export default HomeFunctions;

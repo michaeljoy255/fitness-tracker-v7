@@ -1,6 +1,6 @@
 import DataSeeder from './modules/data-seeder';
 import HomeFunctions from './modules/home-functions';
-import HelperFunctions from './modules/helper-functions';
+import EventListeners from './modules/event-listeners';
 
 import './styles.scss';
 
@@ -8,12 +8,17 @@ import './styles.scss';
  * Main App
  */
 document.addEventListener("DOMContentLoaded", e => {
-  let exercises = DataSeeder.seedExercises();
-  let routines = DataSeeder.seedRoutines();
+  // Seed intial data for the app
+  let fitnessData = {
+    exercises: DataSeeder.seedExercises(),
+    routines: DataSeeder.seedRoutines()
+  };
 
-  console.log(exercises);
-  console.log(routines);
+  console.log(fitnessData);
 
-  HomeFunctions.constructHomePage(routines);
-  HelperFunctions.loadEventListeners(routines);
+  // Constructs DOM for home page when first loaded
+  HomeFunctions.constructHomePage(fitnessData.routines);
+
+  // Event listeners are attached to #app when first loaded
+  EventListeners.loadEventListeners(fitnessData);
 });
