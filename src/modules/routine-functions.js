@@ -27,9 +27,7 @@ const RoutineFunctions = (function() {
     `;
 
     const title = `
-      <div class="routine-title" id="${routineId}">
-        ${fitnessData.routines.find(routine => routine.id === routineId).name}
-      </div>
+      <div class="routine-title" id="${routineId}">${fitnessData.routines.find(routine => routine.id === routineId).name}</div>
     `;
 
     const exercises = constructExercises(routineId, fitnessData);
@@ -68,8 +66,6 @@ const RoutineFunctions = (function() {
       let foundExercise = fitnessData.exercises.find(
         exercise => exercise.id === exerciseId
       );
-
-      console.log(foundExercise.details);
 
       exercisesHtml += `
         <div class="exercise" id="${foundExercise.id}">

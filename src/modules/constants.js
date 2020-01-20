@@ -135,11 +135,11 @@ const CONSTANTS = (function() {
       category: Category.CHEST,
       notes: "Rest times of ~1 minute. Do ~5x8 slowly."
     },
-    LAYING_OVERHEAD_STRAIGHT_ARMS: {
+    OVERHEAD_STRAIGHT_ARMS: {
       id: "chest_011",
-      name: "Laying Overhead Straight Arms",
+      name: "Overhead Straight Arms",
       category: Category.CHEST,
-      notes: "Rest times of ~1 minute. Do ~5x10 slowly."
+      notes: "Raise and lower weight behind head while laying down. Rest times of ~1 minute. Do ~5x10 slowly."
     },
     CABLE_CHEST_SIDE_PULLS: {
       id: "chest_012",
@@ -150,19 +150,19 @@ const CONSTANTS = (function() {
     // SHOULDERS ---------------------------------------------------------------
     SIDE_RAISES: {
       id: "shoulders_001",
-      name: "Weighted Side Raises",
+      name: "Side Raises",
       category: Category.SHOULDERS,
       notes: "Extend arms outward. Rest times of ~1 minute. Do ~5x10."
     },
     FRONT_RAISES: {
       id: "shoulders_002",
-      name: "Weighted Front Raises",
+      name: "Front Raises",
       category: Category.SHOULDERS,
       notes: "Extend arms forward. Rest times of ~1 minute. Do ~5x10."
     },
     FRONT_SIDE_RAISES: {
       id: "shoulders_003",
-      name: "Weighted Front and Side Raises",
+      name: "Front and Side Raises",
       category: Category.SHOULDERS,
       notes: "Extend arms forward then outward. Rest times of ~1 minute. Do ~5x10."
     },
@@ -391,7 +391,7 @@ const CONSTANTS = (function() {
       exercise_ids: [
         Exercise.FLAT_TNG_PRESS.id,
         Exercise.INCLINE_TNG_PRESS.id,
-        Exercise.LAYING_OVERHEAD_STRAIGHT_ARMS.id,
+        Exercise.OVERHEAD_STRAIGHT_ARMS.id,
         Exercise.FRONT_SIDE_RAISES.id,
         Exercise.SKULL_CRUSHERS.id,
         Exercise.STRETCHING.id
