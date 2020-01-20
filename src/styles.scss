@@ -11,7 +11,7 @@ html {
   color: #e2e2e2;
 }
 
-div#app {
+#app {
   width: 100%;
   height: 90vh;
   padding: 10px;
@@ -29,19 +29,19 @@ button {
 }
 
 /* Home */
-section#home-page {
+#home-page {
   justify-content: space-between;
 }
 
-h1.app-title {
+.app-title {
   text-transform: capitalize;
   text-align: center;
   font-size: 24px;
   font-weight: 400;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
-div.routine-btns {
+.routine-btns {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +56,7 @@ div.routine-btns {
   width: 250px;
   height: 25px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 p.byline {
@@ -121,36 +121,19 @@ header span {
   color: #757575;
 }
 
-.exercise-objectives {
+.weight-heading {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-top: 8px;
-  font-size: 12px;
-  text-align: center;
 }
 
-.hourglass_empty {
-  color: #2289ff;
-}
-
-.speed {
-  color: #42d12f;
-}
-
-.whatshot,
-.priority_high {
-  color: #e6321a;
-}
-
-.signal_cellular_null,
-.fitness_center {
-  color: #f3c428;
-}
-
-.exercise-inputs {
+.weight-inputs-row {
   display: flex;
   flex-direction: row;
+}
+
+.exercise-details {
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   padding: 8px;
 }

@@ -76,7 +76,7 @@ const RoutineFunctions = (function() {
           <div class="exercise-notes">
             <p>${foundExercise.notes}</p>
           </div>
-          ${constructExerciseInputs(foundExercise)}
+          ${constructExerciseDetails(foundExercise)}
         </div>
       `;
     });
@@ -84,17 +84,78 @@ const RoutineFunctions = (function() {
     return exercisesHtml;
   }
 
-  const constructExerciseInputs = function(exercise) {
+  const constructExerciseDetails = function(exercise) {
+    let exerciseDetails = "";
 
-    // WIP
+    if (exercise.details instanceof CardioDetails) {
+      exerciseDetails = constructCardioInputs(exercise);
+    } else if (exercise.details instanceof WeightDetails) {
+      exerciseDetails = constructWeightInputs(exercise);
+    }
 
     let exerciseInputs = `
-      <div class="exercise-inputs">
-        ${exercise.details}
-      </div>  
+      <div class="exercise-details">${exerciseDetails}</div>
     `;
     
     return exerciseInputs;
+  }
+
+  const constructCardioInputs = function(exercise) {
+    let cardioHeading = `
+    <div class="cardio-heading">
+      <span>Duration</span>
+      <span>Distance or Steps</span>
+    </div>
+    `;
+
+    let cardioInputs = `
+      <div class="cardio-inputs-row">
+        <input id="${exercise.id}_duration">
+        <input id="${exercise.id}_distance">
+      </div>
+    `;
+
+    return `${cardioHeading}${cardioInputs}`;
+  }
+
+  const constructWeightInputs = function(exercise) {
+    let weightHeading = `
+      <div class="weight-heading">
+        <span>Set</span>
+        <span>Weight</span>
+        <span>Reps</span>
+      </div>
+    `;
+
+    let weightInputs = `
+      <div class="weight-inputs-row">
+        <span>1</span>
+        <input id="${exercise.id}_weight_1">
+        <input id="${exercise.id}_reps_1">
+      </div>
+      <div class="weight-inputs-row">
+        <span>2</span>
+        <input id="${exercise.id}_weight_2">
+        <input id="${exercise.id}_reps_2">
+      </div>
+      <div class="weight-inputs-row">
+        <span>3</span>
+        <input id="${exercise.id}_weight_3">
+        <input id="${exercise.id}_reps_3">
+      </div>
+      <div class="weight-inputs-row">
+        <span>4</span>
+        <input id="${exercise.id}_weight_4">
+        <input id="${exercise.id}_reps_4">
+      </div>
+      <div class="weight-inputs-row">
+        <span>5</span>
+        <input id="${exercise.id}_weight_5">
+        <input id="${exercise.id}_reps_5">
+      </div>
+    `;
+
+    return `${weightHeading}${weightInputs}`;
   }
 
   // Not ideal to do it this way...
