@@ -1,20 +1,4 @@
-const CONSTANTS = (function() {
-  /**
-   * Material icons used throughout the project
-   */
-  const Icon = {
-    CALENDAR: "calendar_today",
-    CANCEL: "cancel",
-    INCLINE: "signal_cellular_null",
-    INTENSITY: "whatshot",
-    MAXIMUM: "priority_high",
-    NOTES: "assignment",
-    RESISTENCE: "fitness_center",
-    REST: "hourglass_empty",
-    TEMPO: "speed",
-    TIMER: "timer"
-  }
-
+const FitnessDefaults = (function() {
   /**
    * Categories for exercises
    */
@@ -29,7 +13,7 @@ const CONSTANTS = (function() {
     MISC: "Miscellaneous",
     SHOULDERS: "Shoudlers",
     TRICEPS: "Triceps"
-  }
+  };
 
   /**
    * All available exercises
@@ -38,7 +22,7 @@ const CONSTANTS = (function() {
   const Exercise = {
     // CARDIO ------------------------------------------------------------------
     MISC_CARDIO: {
-      id: "cardio_001", 
+      id: "cardio_001",
       name: "Miscellaneous Cardio",
       category: Category.CARDIO,
       notes: "For miscellaneous cardio exercises."
@@ -47,19 +31,22 @@ const CONSTANTS = (function() {
       id: "cardio_002",
       name: "Elliptical",
       category: Category.CARDIO,
-      notes: "Aim for 2 miles in 20 to 30 minutes. Adjust resistance and incline settings to maintain that goal."
+      notes:
+        "Aim for 2 miles in 20 to 30 minutes. Adjust resistance and incline settings to maintain that goal."
     },
     STAIR_STEPPER: {
       id: "cardio_003",
       name: "Stair Stepper",
       category: Category.CARDIO,
-      notes: "Use for 20 to 30 minutes. Adjust speed in an effort to keep heart rate above 140 bpm."
+      notes:
+        "Use for 20 to 30 minutes. Adjust speed in an effort to keep heart rate above 140 bpm."
     },
     TREADMILL: {
       id: "cardio_004",
       name: "Treadmill",
       category: Category.CARDIO,
-      notes: "Aim for 2 miles in 20 to 30 minutes. Adjust incline setting to maintain that goal."
+      notes:
+        "Aim for 2 miles in 20 to 30 minutes. Adjust incline setting to maintain that goal."
     },
     // MISC --------------------------------------------------------------------
     MISC_EXERCISE: {
@@ -72,62 +59,72 @@ const CONSTANTS = (function() {
       id: "misc_002",
       name: "Stretching",
       category: Category.MISC,
-      notes: "Aim for 5 to 10 minutes of stretching with a focus on recently used muscle groups."
+      notes:
+        "Aim for 5 to 10 minutes of stretching with a focus on recently used muscle groups."
     },
     // CHEST -------------------------------------------------------------------
     FLAT_TNG_PRESS: {
       id: "chest_001",
       name: "Flat TNG Bench Press",
       category: Category.CHEST,
-      notes: "Touch-and-go style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Touch-and-go style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     INCLINE_TNG_PRESS: {
       id: "chest_002",
       name: "Incline TNG Bench Press",
       category: Category.CHEST,
-      notes: "Touch-and-go style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Touch-and-go style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     DECLINE_TNG_PRESS: {
       id: "chest_003",
       name: "Decline TNG Bench Press",
       category: Category.CHEST,
-      notes: "Touch-and-go style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Touch-and-go style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     FLAT_PIN_PRESS: {
       id: "chest_004",
       name: "Flat PIN Bench Press",
       category: Category.CHEST,
-      notes: "Pin press style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Pin press style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     INCLINE_PIN_PRESS: {
       id: "chest_005",
       name: "Incline PIN Bench Press",
       category: Category.CHEST,
-      notes: "Pin press style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Pin press style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     DECLINE_PIN_PRESS: {
       id: "chest_006",
       name: "Decline PIN Bench Press",
       category: Category.CHEST,
-      notes: "Pin press style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Pin press style. Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     FLAT_DUMBBELL_PRESS: {
       id: "chest_007",
       name: "Flat Dumbell Press",
       category: Category.CHEST,
-      notes: "Rest times of ~1 minute. Do ~5x8 with optional back-off final set."
+      notes:
+        "Rest times of ~1 minute. Do ~5x8 with optional back-off final set."
     },
     INCLINE_DUMBBELL_PRESS: {
       id: "chest_008",
       name: "Incline Dumbell Press",
       category: Category.CHEST,
-      notes: "Rest times of ~1 minute. Do ~5x8 with optional back-off final set."
+      notes:
+        "Rest times of ~1 minute. Do ~5x8 with optional back-off final set."
     },
     DECLINE_DUMBBELL_PRESS: {
       id: "chest_009",
       name: "Decline Dumbell Press",
       category: Category.CHEST,
-      notes: "Rest times of ~1 minute. Do ~5x8 with optional back-off final set."
+      notes:
+        "Rest times of ~1 minute. Do ~5x8 with optional back-off final set."
     },
     FLY_MACHINE_CHEST: {
       id: "chest_010",
@@ -139,7 +136,8 @@ const CONSTANTS = (function() {
       id: "chest_011",
       name: "Overhead Straight Arms",
       category: Category.CHEST,
-      notes: "Raise and lower weight behind head while laying down. Rest times of ~1 minute. Do ~5x10 slowly."
+      notes:
+        "Raise and lower weight behind head while laying down. Rest times of ~1 minute. Do ~5x10 slowly."
     },
     CABLE_CHEST_SIDE_PULLS: {
       id: "chest_012",
@@ -164,7 +162,8 @@ const CONSTANTS = (function() {
       id: "shoulders_003",
       name: "Front and Side Raises",
       category: Category.SHOULDERS,
-      notes: "Extend arms forward then outward. Rest times of ~1 minute. Do ~5x10."
+      notes:
+        "Extend arms forward then outward. Rest times of ~1 minute. Do ~5x10."
     },
     SEATED_SHOULDER_PRESS: {
       id: "shoulders_004",
@@ -177,13 +176,15 @@ const CONSTANTS = (function() {
       id: "triceps_001",
       name: "Skull Crushers",
       category: Category.TRICEPS,
-      notes: "Lower weight behind head using elbows while laying down. Rest times of ~1 minute. Do ~5x10."
+      notes:
+        "Lower weight behind head using elbows while laying down. Rest times of ~1 minute. Do ~5x10."
     },
     TRICEP_OVERHEAD_EXT: {
       id: "triceps_002",
       name: "Tricep Overhead Extension",
       category: Category.TRICEPS,
-      notes: "Tricep overhead extension while standing or seated. Rest times of ~1 minute. Do ~5x10."
+      notes:
+        "Tricep overhead extension while standing or seated. Rest times of ~1 minute. Do ~5x10."
     },
     TRICEP_KICKBACKS: {
       id: "triceps_003",
@@ -195,7 +196,8 @@ const CONSTANTS = (function() {
       id: "triceps_004",
       name: "Cable Tricep Pulldowns",
       category: Category.TRICEPS,
-      notes: "Using any attachment. Rest times of ~1 minute. Do ~5x8 with optional AMRAP final set."
+      notes:
+        "Using any attachment. Rest times of ~1 minute. Do ~5x8 with optional AMRAP final set."
     },
     TRICEP_PRESS: {
       id: "triceps_005",
@@ -208,25 +210,29 @@ const CONSTANTS = (function() {
       id: "back_001",
       name: "Bent Over Rows",
       category: Category.BACK,
-      notes: "Remember to brace hard! Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Remember to brace hard! Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     SHRUGS: {
       id: "back_002",
       name: "Shrugs",
       category: Category.BACK,
-      notes: "Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     DEADLIFTS: {
       id: "back_003",
       name: "Deadlifts",
       category: Category.BACK,
-      notes: "Remember to brace hard! Rest times of ~2 minutes. Do ~3-5x5 with optional back-off final set."
+      notes:
+        "Remember to brace hard! Rest times of ~2 minutes. Do ~3-5x5 with optional back-off final set."
     },
     STIFF_LEG_DEADLIFTS: {
       id: "back_004",
       name: "Stiff Leg Deadlifts",
       category: Category.BACK,
-      notes: "Remember to brace hard! Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
+      notes:
+        "Remember to brace hard! Rest times of ~2 minutes. Do ~5x5 with optional back-off final set."
     },
     ASSISTED_PULL_UPS: {
       id: "back_005",
@@ -300,7 +306,8 @@ const CONSTANTS = (function() {
       id: "legs_001",
       name: "Weighted Squats",
       category: Category.LEGS,
-      notes: "Remember to brace hard! Rest times of ~2 minutes. Do ~3-5x5 with optional back-off final set."
+      notes:
+        "Remember to brace hard! Rest times of ~2 minutes. Do ~3-5x5 with optional back-off final set."
     },
     LEG_PRESS_MACHINE: {
       id: "legs_002",
@@ -367,9 +374,10 @@ const CONSTANTS = (function() {
       id: "core_003",
       name: "Oblique Side Bends",
       category: Category.CORE,
-      notes: "Lower and lift weight along side of body with arms straight. Rest times of ~1 minutes. Do ~3x25 with optional AMRAP final set."
+      notes:
+        "Lower and lift weight along side of body with arms straight. Rest times of ~1 minutes. Do ~3x25 with optional AMRAP final set."
     }
-  }
+  };
 
   /**
    * All available routines
@@ -452,15 +460,14 @@ const CONSTANTS = (function() {
         Exercise.OBLIQUE_SIDE_BEND.id,
         Exercise.STRETCHING.id
       ]
-    },
+    }
   };
-  
+
   return {
-    Icon,
     Category,
     Exercise,
     Routine
-  }
+  };
 })();
 
-export default CONSTANTS;
+export default FitnessDefaults;
