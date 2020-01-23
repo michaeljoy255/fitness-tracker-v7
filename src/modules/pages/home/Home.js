@@ -1,5 +1,5 @@
-import HomeComponents from "./home-components";
-import HomeListeners from "./home-listeners";
+import HomeFragments from "./Fragments";
+import HomeListeners from "./Listeners";
 
 /**
  * Responsible for assembling the DOM elements for the Home Page
@@ -12,10 +12,10 @@ const HomePage = (function() {
     const homePage = document.createElement("section");
     homePage.id = "home-page";
 
-    homePage.appendChild(HomeComponents.getHomeNavbarFragment());
-    homePage.appendChild(HomeComponents.getHomeTitleFragment());
-    homePage.appendChild(HomeComponents.getHomeRoutinesFragment());
-    homePage.appendChild(HomeComponents.getHomeFooterFragment());
+    homePage.appendChild(HomeFragments.getTitle());
+    homePage.appendChild(HomeFragments.getRoutines());
+    //homePage.appendChild(HomeFragments.getFooter());
+    homePage.appendChild(HomeFragments.getNavbar());
 
     frag.appendChild(homePage);
 
@@ -24,7 +24,7 @@ const HomePage = (function() {
     app.appendChild(frag);
 
     // Load Home Page event listeners
-    HomeListeners.loadHomeEventListenersOnElement(homePage.id);
+    HomeListeners.loadEventListenersOnElement(homePage.id);
   };
 
   return { constructHomePage };

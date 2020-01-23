@@ -1,11 +1,11 @@
 import State from "../../data/state";
-import RoutinePage from "../routine/routine-page";
+import RoutinePage from "../routine/Routine";
 
 /**
  * Adds all event listeners to the delegated DOM element
  */
 const HomeListeners = (function() {
-  const loadHomeEventListenersOnElement = function(elementId) {
+  const loadEventListenersOnElement = function(elementId) {
     const homePage = document.getElementById(elementId);
     const routineIds = State.getLoadedRoutines().map(routine => routine.id);
 
@@ -15,11 +15,12 @@ const HomeListeners = (function() {
       if (routineIds.includes(e.target.id)) {
         State.setRoutineState(e.target.id);
         RoutinePage.constructRoutinePage();
+        State.DEBUG_STATE(); // TEMP
       }
     });
   };
 
-  return { loadHomeEventListenersOnElement };
+  return { loadEventListenersOnElement };
 })();
 
 export default HomeListeners;

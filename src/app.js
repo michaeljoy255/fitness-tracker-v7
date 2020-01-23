@@ -1,6 +1,6 @@
-import HomePage from "./modules/pages/home/home-page";
+import HomePage from "./modules/pages/home/Home";
 
-//import "./styles.scss";
+import "./styles.scss";
 
 /**
  * Main App

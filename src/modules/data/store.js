@@ -3,7 +3,6 @@ import Exercise from "../../classes/exercise";
 import Routine from "../../classes/routine";
 import WeightDetails from "../../classes/weight-details";
 import CardioDetails from "../../classes/cardio-details";
-import RoutineDetails from "../../classes/routine-details";
 
 /**
  * Store is responsible for communicating with local storage and initializing
@@ -55,7 +54,8 @@ const Store = (function() {
     return new Routine({
       id: routineDefault.id,
       name: routineDefault.name,
-      details: new RoutineDetails(),
+      routine_date: null,
+      routine_time: null,
       exercise_ids: routineDefault.exercise_ids
     });
   };

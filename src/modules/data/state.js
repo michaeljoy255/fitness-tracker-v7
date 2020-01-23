@@ -1,4 +1,5 @@
 import Store from "./store";
+import Helpers from "../helpers";
 
 /**
  * State is responsible for keeping app level data ready and available.
@@ -32,32 +33,41 @@ const State = (function() {
     return state.routineStartTime;
   };
 
+  const getLoadedRoutineById = function(routineId) {
+    return state.loadedRoutines.find(routine => routine.id === routineId);
+  };
+
   const setRoutineState = function(routineId) {
     // Sets the start time for the new routine
     state.routineStartTime = new Date().getTime();
 
-    // Sets the current routine state data to the new routine
-    state.currentRoutine = state.loadedRoutines.find(
-      routine => routine.id === routineId
-    );
+    // Sets current routine state to the new routine and sets the current date
+    state.currentRoutine = {
+      ...state.loadedRoutines.find(routine => routine.id === routineId),
+      routine_date: Helpers.getDateString()
+    };
 
-    // Sets the current exercises state data to the ones from the new routine
-    state.currentExercises = state.currentRoutine.exercise_ids.map(
-      curExerId => {
+    // Sets the current exercises state to the ones from the new routine
+    state.currentExercises = [
+      ...state.currentRoutine.exercise_ids.map(curExerId => {
         return state.loadedExercises.find(loadedExercise => {
           if (loadedExercise.id === curExerId) {
             return loadedExercise;
           }
         });
-      }
-    );
+      })
+    ];
+  };
 
-    console.log(state); // TEMP - Shows changes to the state
+  const DEBUG_STATE = function() {
+    console.log(state);
   };
 
   return {
+    DEBUG_STATE,
     getLoadedExercises,
     getLoadedRoutines,
+    getLoadedRoutineById,
     getCurrentExercises,
     getCurrentRoutine,
     getRoutineStartTime,

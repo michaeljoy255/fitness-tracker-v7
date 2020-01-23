@@ -387,7 +387,8 @@ const FitnessDefaults = (function() {
     CARDIO_DAY: {
       id: "routine_001",
       name: "Cardio Day",
-      details: null,
+      routine_date: null,
+      routine_time: null,
       exercise_ids: [
         Exercise.ELLIPTICAL.id,
         Exercise.STAIR_STEPPER.id,
@@ -397,7 +398,8 @@ const FitnessDefaults = (function() {
     CHEST_1: {
       id: "routine_002",
       name: "Chest, Shoulders, Triceps #1",
-      details: null,
+      routine_date: null,
+      routine_time: null,
       exercise_ids: [
         Exercise.FLAT_TNG_PRESS.id,
         Exercise.INCLINE_TNG_PRESS.id,
@@ -410,7 +412,8 @@ const FitnessDefaults = (function() {
     CHEST_2: {
       id: "routine_003",
       name: "Chest, Shoulders, Triceps #2",
-      details: null,
+      routine_date: null,
+      routine_time: null,
       exercise_ids: [
         Exercise.FLAT_PIN_PRESS.id,
         Exercise.DECLINE_TNG_PRESS.id,
@@ -423,7 +426,8 @@ const FitnessDefaults = (function() {
     BACK_1: {
       id: "routine_004",
       name: "Back and Biceps #1",
-      details: null,
+      routine_date: null,
+      routine_time: null,
       exercise_ids: [
         Exercise.BENT_OVER_ROWS.id,
         Exercise.STIFF_LEG_DEADLIFTS.id,
@@ -435,7 +439,8 @@ const FitnessDefaults = (function() {
     BACK_2: {
       id: "routine_005",
       name: "Back and Biceps #2",
-      details: null,
+      routine_date: null,
+      routine_time: null,
       exercise_ids: [
         Exercise.SEATED_CABLE_ROWS.id,
         Exercise.STANDING_T_ROWS.id,
@@ -447,7 +452,8 @@ const FitnessDefaults = (function() {
     LEGS_CORE: {
       id: "routine_006",
       name: "Legs and Core",
-      details: null,
+      routine_date: null,
+      routine_time: null,
       exercise_ids: [
         Exercise.LEG_PRESS_MACHINE.id,
         Exercise.LEG_EXT_MACHINE.id,

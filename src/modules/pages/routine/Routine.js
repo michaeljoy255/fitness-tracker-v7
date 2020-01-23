@@ -1,5 +1,6 @@
-import RoutineComponents from "./routine-components";
-import RoutineListeners from "./routine-listeners";
+import RoutineFragments from "./Fragments";
+import RoutineListeners from "./Listeners";
+import Helpers from "../../helpers";
 
 /**
  * Responsible for assembling the DOM elements for the Routine Page
@@ -12,10 +13,10 @@ const RoutinePage = (function() {
     const routinePage = document.createElement("section");
     routinePage.id = "routine-page";
 
-    routinePage.appendChild(RoutineComponents.getRoutineNavbarFragment());
-    routinePage.appendChild(RoutineComponents.getRoutineTitleFragment());
-    routinePage.appendChild(RoutineComponents.getRoutineExercisesFragment());
-    routinePage.appendChild(RoutineComponents.getRoutineFooterFragment());
+    routinePage.appendChild(RoutineFragments.getNavbar());
+    routinePage.appendChild(RoutineFragments.getTitle());
+    routinePage.appendChild(RoutineFragments.getExercises());
+    routinePage.appendChild(RoutineFragments.getFooter());
 
     frag.appendChild(routinePage);
 
@@ -24,7 +25,10 @@ const RoutinePage = (function() {
     app.appendChild(frag);
 
     // Load Routine Page event listeners
-    RoutineListeners.loadRoutineEventListenersOnElement(routinePage.id);
+    RoutineListeners.loadEventListenersOnElement(routinePage.id);
+
+    // Start the routine timer
+    Helpers.startTimer("routine-timer");
   };
 
   return { constructRoutinePage };

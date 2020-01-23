@@ -1,11 +1,11 @@
-import State from "../../data/state";
-import HomePage from "../home/home-page";
+import HomePage from "../home/Home";
+import Helpers from "../../helpers";
 
 /**
  * Adds all event listeners to the delegated DOM element
  */
 const RoutineListeners = (function() {
-  const loadRoutineEventListenersOnElement = function(elementId) {
+  const loadEventListenersOnElement = function(elementId) {
     const routinePage = document.getElementById(elementId);
 
     // Results button
@@ -21,13 +21,14 @@ const RoutineListeners = (function() {
         if (confirm("Cancel this routine?")) {
           //RoutineFunctions.stopRoutineTimer.call(window); // @todo - TIMER!!!
           document.getElementById("app").innerHTML = "";
+          Helpers.clearTimer();
           HomePage.constructHomePage();
         }
       }
     });
   };
 
-  return { loadRoutineEventListenersOnElement };
+  return { loadEventListenersOnElement };
 })();
 
 export default RoutineListeners;

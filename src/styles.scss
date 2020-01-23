@@ -28,6 +28,10 @@ button {
   all: unset;
 }
 
+.click-through {
+  pointer-events: none;
+}
+
 /* Home */
 #home-page {
   justify-content: space-between;

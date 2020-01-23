@@ -4,11 +4,12 @@ import Helpers from "../../helpers";
 /**
  * Component fragments for the Home Page
  */
-const RoutineComponents = (function() {
+const RoutineFragments = (function() {
   /**
    * Top navbar
+   * @returns {Node}
    */
-  const getRoutineNavbarFragment = function() {
+  const getNavbar = function() {
     const frag = document.createDocumentFragment();
     const navbar = document.createElement("navbar");
 
@@ -19,11 +20,11 @@ const RoutineComponents = (function() {
         </span>
         <span>
           <i class="material-icons">calendar_today</i> &nbsp;
-          <span>${Helpers.getShortDateString()}</span>
+          <span>${Helpers.getDateString()}</span>
         </span>
         <span>
           <i class="material-icons">timer</i> &nbsp;
-          <span id="routine-timer">00:00:00</span>
+          <span id="routine-timer">${Helpers.getTimeString()}</span>
         </span>
       </navbar>
     `;
@@ -34,8 +35,9 @@ const RoutineComponents = (function() {
 
   /**
    * Title
+   * @returns {Node}
    */
-  const getRoutineTitleFragment = function() {
+  const getTitle = function() {
     const frag = document.createDocumentFragment();
 
     const div = document.createElement("div");
@@ -49,8 +51,9 @@ const RoutineComponents = (function() {
 
   /**
    * Exercises
+   * @returns {Node}
    */
-  const getRoutineExercisesFragment = function() {
+  const getExercises = function() {
     const frag = document.createDocumentFragment();
 
     State.getCurrentExercises().forEach(exercise => {
@@ -79,8 +82,9 @@ const RoutineComponents = (function() {
 
   /**
    * Footer
+   * @returns {Node}
    */
-  const getRoutineFooterFragment = function() {
+  const getFooter = function() {
     const frag = document.createDocumentFragment();
 
     const div = document.createElement("div");
@@ -92,11 +96,11 @@ const RoutineComponents = (function() {
   };
 
   return {
-    getRoutineNavbarFragment,
-    getRoutineTitleFragment,
-    getRoutineExercisesFragment,
-    getRoutineFooterFragment
+    getNavbar,
+    getTitle,
+    getExercises,
+    getFooter
   };
 })();
 
-export default RoutineComponents;
+export default RoutineFragments;
