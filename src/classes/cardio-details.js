@@ -1,12 +1,8 @@
 class CardioDetails {
-  constructor({
-    previous_cardio_date = null,
-    previous_duration = null,
-    previous_dist_steps = null,
-  }={}) {
-    this.previous_cardio_date = previous_cardio_date;
-    this.previous_duration = previous_duration;
-    this.previous_dist_steps = previous_dist_steps;
+  constructor({ last_date = null, duration = null, dist_steps = null } = {}) {
+    this.last_date = last_date;
+    this.duration = duration;
+    this.dist_steps = dist_steps;
   }
 }
 

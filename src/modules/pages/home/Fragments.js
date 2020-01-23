@@ -62,8 +62,9 @@ const HomeFragments = (function() {
 
     const lastDate = State.getLoadedRoutineById(routineData.id).routine_date;
     const lastTime = State.getLoadedRoutineById(routineData.id).routine_time;
-    const dateTime =
-      lastDate != null ? `${lastDate} (${lastTime})` : "No previous records";
+    const dateTime = lastDate
+      ? `${lastDate} (${lastTime})`
+      : "No previous record";
 
     const routineBtn = document.createElement("button");
     routineBtn.className = "routine-btn";

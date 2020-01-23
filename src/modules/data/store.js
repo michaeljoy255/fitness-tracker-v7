@@ -3,6 +3,7 @@ import Exercise from "../../classes/exercise";
 import Routine from "../../classes/routine";
 import WeightDetails from "../../classes/weight-details";
 import CardioDetails from "../../classes/cardio-details";
+import RecordSet from "../../classes/record-sets";
 
 /**
  * Store is responsible for communicating with local storage and initializing
@@ -39,7 +40,15 @@ const Store = (function() {
         name: exerciseDefault.name,
         category: exerciseDefault.category,
         notes: exerciseDefault.notes,
-        details: new WeightDetails() // @todo - pull data from local storage!
+        details: new WeightDetails({
+          record_sets: [
+            new RecordSet(),
+            new RecordSet(),
+            new RecordSet(),
+            new RecordSet(),
+            new RecordSet()
+          ]
+        }) // @todo - pull data from local storage!
       });
     }
   };

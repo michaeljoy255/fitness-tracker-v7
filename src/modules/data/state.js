@@ -37,6 +37,10 @@ const State = (function() {
     return state.loadedRoutines.find(routine => routine.id === routineId);
   };
 
+  const getLoadedExerciseById = function(exerciseId) {
+    return state.loadedExercises.find(exercise => exercise.id === exerciseId);
+  };
+
   const setRoutineState = function(routineId) {
     // Sets the start time for the new routine
     state.routineStartTime = new Date().getTime();
@@ -59,6 +63,20 @@ const State = (function() {
     ];
   };
 
+  const setExerciseState = function(exerciseId, fieldName, index, newValue) {
+    const currentExercise = state.currentExercises.find(
+      exercise => exercise.id === exerciseId
+    );
+
+    if (index != null) {
+      currentExercise.details.record_sets[index][fieldName] = newValue;
+    } else {
+      currentExercise.details[fieldName] = newValue;
+    }
+
+    console.log(currentExercise); // @todo - temp
+  };
+
   const DEBUG_STATE = function() {
     console.log(state);
   };
@@ -68,10 +86,12 @@ const State = (function() {
     getLoadedExercises,
     getLoadedRoutines,
     getLoadedRoutineById,
+    getLoadedExerciseById,
     getCurrentExercises,
     getCurrentRoutine,
     getRoutineStartTime,
-    setRoutineState
+    setRoutineState,
+    setExerciseState
   };
 })();
 
