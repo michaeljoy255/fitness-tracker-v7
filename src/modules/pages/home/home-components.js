@@ -12,7 +12,7 @@ const HomeComponents = (function() {
 
     const navbar = document.createElement("navbar");
     navbar.className = "home-navbar";
-    navbar.innerHTML = "<p>TEMP - Home Navbar</p>";
+    navbar.innerHTML = "<p>Navbar</p>";
 
     frag.appendChild(navbar);
     return frag;
@@ -60,7 +60,7 @@ const HomeComponents = (function() {
     const frag = document.createDocumentFragment();
 
     const div = document.createElement("div");
-    div.className = "home-title";
+    div.className = "home-footer";
     div.innerHTML = "<p>Fitness Linear Progression ~ Michael J.</p>";
 
     frag.appendChild(div);

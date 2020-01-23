@@ -1,25 +1,30 @@
 import HomeComponents from "./home-components";
+import HomeListeners from "./home-listeners";
 
 /**
  * Responsible for assembling the DOM elements for the Home Page
  */
 const HomePage = (function() {
-  // Important!
-  const app = document.getElementById("app");
-
-  const constructHomePage = function(fitnessRoutines) {
+  const constructHomePage = function() {
+    const app = document.getElementById("app");
     const frag = document.createDocumentFragment();
 
-    const section = document.createElement("section");
-    section.id = "home-page";
+    const homePage = document.createElement("section");
+    homePage.id = "home-page";
 
-    section.appendChild(HomeComponents.getHomeNavbarFragment());
-    section.appendChild(HomeComponents.getHomeTitleFragment());
-    section.appendChild(HomeComponents.getHomeRoutinesFragment());
-    section.appendChild(HomeComponents.getHomeFooterFragment());
+    homePage.appendChild(HomeComponents.getHomeNavbarFragment());
+    homePage.appendChild(HomeComponents.getHomeTitleFragment());
+    homePage.appendChild(HomeComponents.getHomeRoutinesFragment());
+    homePage.appendChild(HomeComponents.getHomeFooterFragment());
 
-    frag.appendChild(section);
+    frag.appendChild(homePage);
+
+    // Clear App then attach Home Page
+    document.getElementById("app").innerHTML = "";
     app.appendChild(frag);
+
+    // Load Home Page event listeners
+    HomeListeners.loadHomeEventListenersOnElement(homePage.id);
   };
 
   return { constructHomePage };

@@ -1,25 +1,25 @@
 import State from "../../data/state";
+import RoutinePage from "../routine/routine-page";
 
 /**
  * Adds all event listeners to the delegated DOM element
  */
 const HomeListeners = (function() {
-  // Important!
-  const homePage = document.getElementById("home-section");
-
-  const loadHomeEventListeners = function() {
+  const loadHomeEventListenersOnElement = function(elementId) {
+    const homePage = document.getElementById(elementId);
     const routineIds = State.getLoadedRoutines().map(routine => routine.id);
 
     // Routine buttons
     homePage.addEventListener("mousedown", e => {
       // Start routine with Id of clicked element if its in the routines array
       if (routineIds.includes(e.target.id)) {
-        //RoutineFunctions.constructRoutinePage(e.target.id, fitnessData);
+        State.setRoutineState(e.target.id);
+        RoutinePage.constructRoutinePage();
       }
     });
   };
 
-  return { loadHomeEventListeners };
+  return { loadHomeEventListenersOnElement };
 })();
 
 export default HomeListeners;
