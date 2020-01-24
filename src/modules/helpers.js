@@ -49,11 +49,11 @@ const Helpers = (function() {
       ((((timeDiff % secsPerDay) % secsPerHour) % (60 * 1000)) / 1000) * 1
     );
 
-    const strHours = hours.toString() != "0" ? `${hours.toString()}h` : "";
-    const strMins = mins.toString() != "0" ? `${mins.toString()}m` : "";
+    const strHours = hours.toString() != "0" ? `${hours.toString()}h ` : "";
+    const strMins = mins.toString() != "0" ? `${mins.toString()}m ` : "";
     const strSecs = secs.toString() != "0" ? `${secs.toString()}s` : "";
 
-    return `${strHours} ${strMins} ${strSecs}`;
+    return `${strHours}${strMins}${strSecs}`;
   };
 
   return {

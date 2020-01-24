@@ -28,6 +28,14 @@ section {
 
 button {
   all: unset;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #33356b;
+  width: 250px;
+  height: 25px;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 .click-through {
@@ -47,22 +55,10 @@ button {
   margin-top: 20px;
 }
 
-.routine-btns {
+.routines {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.routine-btn,
-#results-btn {
-  border-radius: 4px;
-  font-weight: bold;
-  text-align: center;
-  background-color: #33356b;
-  width: 250px;
-  height: 25px;
-  padding: 10px;
-  margin-bottom: 15px;
 }
 
 p.byline {

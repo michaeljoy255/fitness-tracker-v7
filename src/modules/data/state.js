@@ -61,6 +61,11 @@ const State = (function() {
         });
       })
     ];
+
+    // Set exercise dates to routine date
+    state.currentExercises.forEach(
+      exercise => (exercise.last_date = Helpers.getDateString())
+    );
   };
 
   const setExerciseState = function(exerciseId, fieldName, index, newValue) {
@@ -73,8 +78,14 @@ const State = (function() {
     } else {
       currentExercise.details[fieldName] = newValue;
     }
+  };
 
-    console.log(currentExercise); // @todo - temp
+  const refreshState = function() {
+    state.loadedExercises = Store.initAllExercises();
+    state.loadedRoutines = Store.initAllRoutines();
+    state.currentExercises = null;
+    state.currentRoutine = null;
+    state.routineStartTime = null;
   };
 
   const DEBUG_STATE = function() {
@@ -91,7 +102,8 @@ const State = (function() {
     getCurrentRoutine,
     getRoutineStartTime,
     setRoutineState,
-    setExerciseState
+    setExerciseState,
+    refreshState
   };
 })();
 

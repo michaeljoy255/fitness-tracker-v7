@@ -105,13 +105,7 @@ const RoutineFragments = (function() {
     `;
 
     // Display additional info based on details type
-    if (exercise.details instanceof CardioDetails) {
-      const cardioDate = State.getLoadedExerciseById(exercise.id).details
-        .last_date;
-      div.innerHTML += cardioDate
-        ? `<div class="note-highlight">Last done on: ${cardioDate}</div>`
-        : `<div class="note-highlight">No previous date recorded</div>`;
-    } else if (exercise.details instanceof WeightDetails) {
+    if (exercise.details instanceof WeightDetails) {
       const weightData = State.getLoadedExerciseById(exercise.id).details;
       div.innerHTML += weightData.highest_weight
         ? `<div class="note-highlight">Highest Weight: ${weightData.highest_weight} (${weightData.highest_weight_date})</div>`
